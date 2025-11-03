@@ -1,0 +1,21 @@
+# move-items-to-shipment-box.script
+# Bruges af C#-programmet til at flytte en genstand fra A/B/C til shipment (S).
+# {0} erstattes automatisk med 1, 2 eller 3 fra C#-koden.
+
+def move_item_to_shipment(loc):
+  if loc == 1:
+    # Box A
+    movej(p[0.10, -0.30, 0.20, 2.22, -2.22, 0.00], a=1.2, v=0.25)
+  elif loc == 2:
+    # Box B
+    movej(p[0.10,  0.00, 0.20, 2.22, -2.22, 0.00], a=1.2, v=0.25)
+  else:
+    # Box C
+    movej(p[0.10,  0.30, 0.20, 2.22, -2.22, 0.00], a=1.2, v=0.25)
+
+  # Shipment-boksen (fælles destination)
+  movej(p[0.50,  0.00, 0.20, 2.22, -2.22, 0.00], a=1.2, v=0.25)
+end
+
+# Kald funktionen med lokationen fra C# (1/2/3)
+move_item_to_shipment({0})

@@ -1,0 +1,45 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:InventorySystem"
+        x:Class="InventorySystem.MainWindow"
+        x:DataType="local:MainWindow"
+        Title="Item Sorter (Week 7) — Group"
+        Width="920" Height="620">
+
+    <!-- Flyt padding fra Grid til Border -->
+    <Border Padding="12">
+        <Grid RowDefinitions="Auto,*,Auto" ColumnDefinitions="*,*">
+
+            <!-- Topbar -->
+            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Spacing="8">
+                <TextBlock Text="IP:" VerticalAlignment="Center"/>
+                <TextBox x:Name="IpAddress" Width="160" Text="localhost"/>
+                <Button Content="Connect" Click="ConnectButton_OnClick"/>
+                <Button Content="Process next" Click="ProcessButton_OnClick"/>
+                <TextBlock Margin="16,0,0,0" Text="Revenue:" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <!-- Kø -->
+            <StackPanel Grid.Row="1" Grid.Column="0" Spacing="6">
+                <TextBlock Text="Queued Orders" FontWeight="Bold"/>
+                <DataGrid ItemsSource="{Binding OrderBook.QueuedOrders}"/>
+            </StackPanel>
+
+            <!-- Processed -->
+            <StackPanel Grid.Row="1" Grid.Column="1" Spacing="6">
+                <TextBlock Text="Processed Orders" FontWeight="Bold"/>
+                <DataGrid ItemsSource="{Binding OrderBook.ProcessedOrders}"/>
+            </StackPanel>
+
+            <!-- Log -->
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Spacing="6">
+                <TextBlock Text="Status" FontWeight="Bold"/>
+                <TextBox x:Name="StatusMessages"
+                         AcceptsReturn="True"
+                         IsReadOnly="True"
+                         Height="140"/>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Window>
