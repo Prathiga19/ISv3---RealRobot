@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="ISv3 - RealRobot/App.axaml" value="ISv3 - RealRobot/ISv3 - RealRobot.csproj" />
+        <entry key="ISv3 - RealRobot/MainWindow.axaml" value="ISv3 - RealRobot/ISv3 - RealRobot.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
